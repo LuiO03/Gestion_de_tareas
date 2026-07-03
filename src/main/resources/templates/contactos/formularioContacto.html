@@ -2,24 +2,18 @@
 <html xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       layout:decorate="~{layout/mainlayout}">
-
 <head>
     <title>Formulario de Contacto</title>
-
     <link rel="stylesheet" th:href="@{/css/ui/form.css}">
     <link rel="stylesheet" th:href="@{/css/modules/module-list.css}">
 </head>
-
 <body>
-
 <main layout:fragment="content" class="page">
-
     <div class="page-header">
         <div class="page-title">
             <h2>Nuevo Contacto</h2>
             <p>Complete la información del contacto.</p>
         </div>
-
         <a th:href="@{/contactos}" class="boton-secondary boton-accent">
             <span class="boton-icon">
                 <i class="ri-arrow-go-back-line"></i>
@@ -29,28 +23,21 @@
             </span>
         </a>
     </div>
-
     <form th:action="@{/contactos/guardar}"
           th:object="${contacto}"
           method="post"
           class="form-container">
-
         <input type="hidden" th:field="*{id}">
-
         <div class="form-body">
-
             <div class="form-row-fit">
-
                 <!-- Nombre -->
                 <div class="input-group">
                     <label for="nombre" class="label-form">
                         Nombre
                         <i class="ri-asterisk text-accent"></i>
                     </label>
-
                     <div class="input-icon-container">
                         <i class="ri-user-line input-icon"></i>
-
                         <input
                                 id="nombre"
                                 type="text"
@@ -60,14 +47,12 @@
                                 required>
                     </div>
                 </div>
-
                 <!-- Email -->
                 <div class="input-group">
                     <label for="email" class="label-form">
                         Email
                         <i class="ri-asterisk text-accent"></i>
                     </label>
-
                     <div class="input-icon-container">
                         <i class="ri-mail-line input-icon"></i>
 
@@ -80,20 +65,15 @@
                                 required>
                     </div>
                 </div>
-
             </div>
-
             <div class="form-row-fit">
-
                 <!-- Teléfono -->
                 <div class="input-group">
                     <label for="telefono" class="label-form">
                         Teléfono
                     </label>
-
                     <div class="input-icon-container">
                         <i class="ri-phone-line input-icon"></i>
-
                         <input
                                 id="telefono"
                                 type="text"
@@ -102,11 +82,8 @@
                                 placeholder="987654321">
                     </div>
                 </div>
-
             </div>
-
         </div>
-
         <div class="form-footer-static">
 
             <a th:href="@{/contactos}" class="boton-secondary boton-volver">
@@ -117,18 +94,6 @@
                     Cancelar
                 </span>
             </a>
-
-            <button
-                    type="reset"
-                    class="boton-secondary boton-warning">
-                <span class="boton-icon">
-                    <i class="ri-paint-brush-fill"></i>
-                </span>
-                <span class="boton-text">
-                    Limpiar
-                </span>
-            </button>
-
             <button
                     type="submit"
                     class="boton-secondary boton-success">
@@ -139,12 +104,8 @@
                     Guardar Contacto
                 </span>
             </button>
-
         </div>
-
     </form>
-
 </main>
-
 </body>
 </html>

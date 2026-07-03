@@ -9,15 +9,15 @@
 <main layout:fragment="content" class="page">
     <div class="page-header">
         <div>
-            <h2>Lista de Eventos</h2>
-            <p>Administra los eventos registrados.</p>
+            <h2>Lista de Tareas</h2>
+            <p>Administra las tareas registradas.</p>
         </div>
         <a th:href="@{/eventos/nuevo}" class="boton-secondary bg-success">
             <span class="boton-icon">
                 <i class="ri-add-line"></i>
             </span>
             <span class="boton-text">
-                Nuevo evento
+                Nueva tarea
             </span>
         </a>
     </div>
@@ -25,11 +25,11 @@
         <table class="table">
             <thead>
             <tr>
-                <th>ID</th>
-                <th>Título</th>
+                <th>#</th>
+                <th>Nombre</th>
+                <th>Descripción</th>
                 <th>Fecha</th>
                 <th>Hora</th>
-                <th>Descripción</th>
                 <th>Acciones</th>
             </tr>
             </thead>
@@ -37,9 +37,9 @@
             <tr th:each="evento : ${eventos}">
                 <td th:text="${evento.id}"></td>
                 <td th:text="${evento.titulo}"></td>
-                <td th:text="${#dates.format(evento.fecha, 'dd-MM-yyyy')}"></td>
-                <td th:text="${#dates.format(evento.hora, 'HH:mm:ss')}"></td>
                 <td th:text="${evento.descripcion}"></td>
+                <td th:text="${#dates.format(evento.fecha, 'dd/MM/yyyy')}"></td>
+                <td th:text="${#dates.format(evento.hora, 'HH:mm')}"></td>
                 <td>
                     <div class="table-actions ">
                         <a th:href="@{/eventos/{id}/editar(id=${evento.id})}" class="boton-secondary bg-warning">

@@ -3,7 +3,6 @@ package ejercicio_001.archivos.modelo;
 import jakarta.persistence.*;
 import lombok.Data;
 import org.springframework.format.annotation.DateTimeFormat;
-
 import java.sql.Time;
 import java.util.Date;
 
@@ -25,8 +24,8 @@ public class Evento {
     @DateTimeFormat(pattern = "dd-MM-yyyy")
     private Date fecha;
 
-    @DateTimeFormat(pattern = "HH:mm:ss")
-    private Date hora;
+    @DateTimeFormat(pattern = "HH:mm")
+    private Time hora;
 
     @Column(name = "descripcion")
     private String descripcion;
